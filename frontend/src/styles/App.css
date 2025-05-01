@@ -1,0 +1,119 @@
+/* Global styles
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  .heading{
+    text-align: center;
+  }
+   */
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4fcf6; /* Light greenish background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.heading {
+    text-align: center;
+    color: #2e8b57; /* Green heading */
+    margin-bottom: 20px;
+}
+
+/* Improved Button Style */
+button {
+    background-color: #2e8b57; /* Green button */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px; /* Rounded borders */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+button:hover {
+    background-color: #226945; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+/* Improved Input Styles */
+select, input[type="file"] {
+    padding: 12px;
+    border: 1px solid #a0d4aa; /* Greenish border */
+    border-radius: 25px; /* Rounded borders */
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+select:focus, input[type="file"]:focus {
+    outline: none;
+    border-color: #2e8b57; /* Green focus border */
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.5); /* Green focus shadow */
+}
+
+/* Link styles */
+a {
+    color: #2e8b57; /* Green links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #226945; /* Darker green on hover */
+    text-decoration: underline;
+}
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+.content {
+    flex: 1;
+}

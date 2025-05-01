@@ -1,0 +1,97 @@
+/* .contact-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-page h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .contact-page p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .contact-page a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .contact-page a:hover {
+    text-decoration: underline;
+  }
+   */
+   .contact-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    text-align: justify;
+    border: 2px solid #a0d4aa; /* Add a border */
+}
+
+.contact-page h2 {
+    color: #2e8b57; /* Green heading */
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.contact-page p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-page p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-page a {
+    color: #2e8b57; /* Green links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-page a:hover {
+    text-decoration: underline;
+    color: #226945; /* Darker green on hover */
+}
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #a0d4aa; /* Greenish border */
+    border-radius: 25px; /* Rounded borders */
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #2e8b57; /* Green focus border */
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.5); /* Green focus shadow */
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    width: auto;
+}
