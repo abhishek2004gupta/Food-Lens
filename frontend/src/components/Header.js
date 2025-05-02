@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 import '../styles/Header.css';
 
 function Header() {
@@ -14,6 +15,14 @@ function Header() {
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </nav>
+        <div className="auth-controls">
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
       </div>
     </header>
   );

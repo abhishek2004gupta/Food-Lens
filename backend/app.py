@@ -41,7 +41,7 @@ def preprocess_image(image_bytes):
         # Convert to array and normalize
         image_array = np.array(image) / 255.0
         print(f"Image array shape before reshape: {image_array.shape}")
-        
+            
         # Reshape according to model's input shape
         reshaped_array = image_array.reshape((1,) + model.input_shape[1:])
         print(f"Final image array shape: {reshaped_array.shape}")
