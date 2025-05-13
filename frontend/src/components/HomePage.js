@@ -25,16 +25,33 @@ function HomePage() {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    setSelectedFile(file);
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setUploadedImageUrl(reader.result);
-      };
-      reader.readAsDataURL(file);
-    } else {
+    if (!file) {
+      setSelectedFile(null);
       setUploadedImageUrl(null);
+      return;
     }
+
+    // Validate file type
+    if (!file.type.match('image/jpeg') && !file.type.match('image/png')) {
+      alert('Please upload a JPEG or PNG image');
+      return;
+    }
+
+    // Validate file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      alert('Image size should be less than 5MB');
+      return;
+    }
+
+    // Create preview without affecting original file
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setUploadedImageUrl(reader.result);
+    };
+    reader.readAsDataURL(file);
+
+    // Store original file
+    setSelectedFile(file);
   };
 
   const normalizeDetails = (details) => ({
@@ -55,7 +72,11 @@ function HomePage() {
       }
     } else if (selectedOption === 'Upload Image') {
       if (selectedFile) {
-        const details = await uploadImage(selectedFile);
+        // Create a copy of the file to ensure original quality
+        const fileCopy = new File([selectedFile], selectedFile.name, {
+          type: selectedFile.type
+        });
+        const details = await uploadImage(fileCopy);
         if (details) setProductDetails(normalizeDetails(details));
       } else {
         alert("Please upload an image.");

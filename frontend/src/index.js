@@ -6,9 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { ClerkProvider } from '@clerk/clerk-react';
 
 // Access your publishable key from environment variables
-// const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-
 const PUBLISHABLE_KEY = "pk_test_Zml0dGluZy1yZWRiaXJkLTM1LmNsZXJrLmFjY291bnRzLmRldiQ";
+
 if (!PUBLISHABLE_KEY) {
   console.error('Missing Clerk Publishable Key. Please add it to your .env file.');
   // You can either:

@@ -31,13 +31,29 @@ export const getProductDetails = async (productName) => {
 export const uploadImage = async (imageFile) => {
   try {
     console.log("Starting image upload", imageFile);
+    console.log("Image details:", {
+      name: imageFile.name,
+      type: imageFile.type,
+      size: imageFile.size
+    });
+
     const formData = new FormData();
-    formData.append("image", imageFile);
+    
+    // Ensure the image is properly formatted
+    if (!imageFile.type.match('image/jpeg') && !imageFile.type.match('image/png')) {
+      throw new Error("Please upload a JPEG or PNG image");
+    }
+    
+    // Add the image to FormData with original quality
+    formData.append("image", imageFile, imageFile.name);
     console.log("FormData created with image");
 
     const response = await fetch(`${BASE_URL}/predict`, {
       method: "POST",
-      body: formData
+      body: formData,
+      headers: {
+        // Don't set Content-Type, let the browser set it with the boundary
+      }
     });
 
     console.log("Response status:", response.status);
@@ -49,10 +65,16 @@ export const uploadImage = async (imageFile) => {
 
     const data = await response.json();
     console.log("Server response:", data);
+    
+    // Check if the prediction was successful
+    if (data.error) {
+      throw new Error(data.error);
+    }
+    
     return data;
   } catch (err) {
     console.error("uploadImage error details:", err);
-    alert("Failed to upload image. Check if backend is running.");
+    alert(err.message || "Failed to upload image. Check if backend is running.");
     return null;
   }
 };

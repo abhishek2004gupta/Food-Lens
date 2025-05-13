@@ -56,7 +56,7 @@ function Contact() {
                         improve our service.
                     </p>
                     <p>
-                        You can also contact us via email at: <a href="mailto:info@healthyfoodchecker.com">info@healthyfoodchecker.com</a>
+                        You can also contact us via email at: <a href="mailto:abhishekg272004@gmail.com">abhishekg272004@gmail.com</a>
                     </p>
                     <form className="contact-form" onSubmit={handleSubmit}>
                         <input
